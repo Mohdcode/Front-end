@@ -67,3 +67,14 @@ searchButton.addEventListener('click',()=>{
 function reload(){
     window.location.reload();
 }
+function onPress(event){
+    if(event.key==="Enter"){
+        event.preventDefault();
+        const query=searchText.value;
+    if(!query)return;
+    fetchNews(query);
+    curlSelectedNav?.classList.remove("active");
+    curlSelectedNav=null;
+
+    }
+}
